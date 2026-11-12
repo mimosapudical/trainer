@@ -44,9 +44,7 @@ import (
 // of behavior, not a proposed policy for classifying all failures as fatal.
 func TestDiagnosticPermanentTrialAdmissionRejection(t *testing.T) {
 	ctx := context.Background()
-	optJob := getBaseOptJob()
-	optJob.Spec.NumTrials = 1
-	optJob.Spec.ParallelTrials = 1
+	optJob := diagnosticValidOptimizationJob()
 	name := optimizationjob.GetAlgorithmServiceName(optJob)
 	deploy := &appsv1.Deployment{
 		ObjectMeta: metav1.ObjectMeta{Name: name, Namespace: optJob.Namespace},
