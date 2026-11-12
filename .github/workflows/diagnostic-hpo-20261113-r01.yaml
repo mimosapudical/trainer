@@ -35,4 +35,4 @@ jobs:
           go-version-file: go.mod
       - name: Compile and run targeted diagnostics
         run: |
-          go test ./pkg/controller -run '^TestDiagnostic(RestartAfterAmbiguousCreate|PermanentTrialAdmissionRejection)$' -count=1 -v
+          go test ./pkg/controller -run '^TestDiagnostic(RestartAfterAmbiguousCreate|PermanentTrialAdmissionRejection)$' -count=5 -v
